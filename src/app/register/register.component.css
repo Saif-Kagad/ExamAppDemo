@@ -1,0 +1,14 @@
+.btn btn-block btn-success{
+    background-color: blue;
+}
+
+input[type=radio] {
+    width: 10px;
+    height: 10px;
+}
+
+input[type=text]
+{
+    width: 100%;
+}
+

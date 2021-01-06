@@ -1,0 +1,117 @@
+
+
+ <h2 style="text-align: center;color:#337ab7; font-weight: bold;"><span class="glyphicon glyphicon-pencil"></span> &nbsp;Sign Up</h2>
+<br> 
+<h4 style="text-align: center;">
+  Existing User ? <button (click)="onLogin()" class="btn btn-primary">Login here</button>
+</h4>  
+<div class="container" style=" padding-left: 35%; text-align: center;">  
+    <div class="row" >  
+      <div class="col-md-5 ">  
+        <div class="card mx-4">  
+          <div class="card-body p-4">  
+            <form  [formGroup]="UserForm"  (ngSubmit)="onFormSubmit()">  
+              <div class="input-group mb-5" >  
+                <label for="email" style="font-weight: bold;text-align: center;">Email</label> 
+              </div>
+              <div class="input-group mb-5" > 
+                <input type="text" class="form-control input-lg" placeholder="Email"  formControlName="email" #email >  
+              </div>
+              <span class="text-danger"
+                                *ngIf="(userFormControls.email.touched || submitted) && userFormControls.email.errors?.required">
+                                Email is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="userFormControls.email.touched && userFormControls.email.errors?.email">
+                                Enter a valid email address
+                            </span>  
+
+              <br/>
+              <div class="input-group input-group-lg" >  
+                <label for="fullname" style="font-weight: bold;">Fullname</label>
+              </div>
+              <div class="input-group input-group-lg" > 
+                <input type="text" class="form-control" placeholder="Fullname"  formControlName="fullname">  
+              </div>  
+              <span class="text-danger"
+              *ngIf="(userFormControls.fullname.touched || submitted) && userFormControls.fullname.errors?.required">
+              Name is required
+          </span>
+
+              <br/>
+              <div class="input-group input-group-lg" > 
+                <label for="password" style="font-weight: bold;">Password</label> 
+              </div>
+              <div class="input-group input-group-lg" >  
+                <input type="password" class="form-control" placeholder="Password"  formControlName="password">  
+              </div> 
+              
+              <br/>
+              <div class="input-group input-group-lg" >  
+                <label for="age" style="font-weight: bold;">Age</label> 
+              </div>
+              <div class="input-group input-group-lg" > 
+                <input type="number" class="form-control" placeholder="Age"  formControlName="age">  
+              </div>  
+              <br/>
+              <div class="input-group input-group-lg" > 
+                
+                <label for="gender" style="font-weight: bold;">Gender &nbsp;&nbsp;</label> 
+                
+                  <input type="radio" value="Male" style = "font-size: large;"formControlName="gender">&nbsp;
+                    <span>Male</span>&nbsp;&nbsp;
+              
+                  <input type="radio" value="Female" formControlName="gender">&nbsp;
+                    <span>Female</span>
+                
+          
+              </div>
+              <br/>
+              <div class="input-group input-group-lg" > 
+                <label for="city" style="font-weight: bold;">City</label> 
+              </div>
+              <div class="input-group input-group-lg" >  
+                <input type="text" class="form-control" placeholder="City"  formControlName="city">  
+              </div>  
+              <br/>
+              <div class="input-group input-group-lg" >  
+                <label for="state" style="font-weight: bold;">State</label> 
+              </div>
+              <div class="input-group input-group-lg" > 
+                <input type="text" class="form-control" placeholder="State"  formControlName="state">  
+              </div>  
+              <br/>
+             <div class="input-group input-group-lg" >  
+                <label for="dob" style="font-weight: bold;">Date of Birth</label> 
+              </div>
+              <div class="input-group input-group-lg" > 
+                <input type="date" class="form-control" placeholder="dob"  formControlName="dob">  
+              </div> 
+              <br/>
+              <div class="input-group input-group-lg" >  
+                <label for="qualification" style="font-weight: bold;">Qualification</label> 
+              </div> 
+
+              <div class="input-group input-group-lg" > 
+                <input type="text" class="form-control" placeholder="Qualification"  formControlName="qualification">  
+              </div>  
+              <br/>
+              <div class="input-group input-group-lg" >  
+                <label for="year" style="font-weight: bold;">Year of Completion</label> 
+              </div> 
+              <div class="input-group input-group-lg" > 
+                <input type="number" class="form-control" placeholder="year"  formControlName="year">  
+              </div>
+              <br/>  
+              <button type="submit" style="float: right;" class="btn btn-primary" [disabled]="!UserForm.valid">Sign Up</button>  
+            <br>
+             
+            
+            </form>  
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </div> 
+
+  

@@ -1,0 +1,48 @@
+
+<h2 style="text-align: center;color:#337ab7; font-weight: bold;"><i class="fa fa-users" aria-hidden="true"></i> &nbsp;Student Login </h2>
+<br>
+<div class="container" style=" padding-left: 35%; text-align: center;">  
+    <div class="row" >  
+      <div class="col-md-5 ">  
+        <div class="card mx-4">  
+          <div class="card-body p-4">  
+            <form  [formGroup]="UserForm"  (ngSubmit)="onFormSubmit()">  
+              <div class="input-group mb-5" >  
+                <label for="email" style="font-weight: bold;text-align: center;">Email</label> 
+              </div>
+              <div class="input-group mb-5" > 
+                <input type="text" class="form-control input-lg" placeholder="Email"  formControlName="email" #email >  
+              </div>
+              <span class="text-danger"
+                                *ngIf="(userFormControls.email.touched || submitted) && userFormControls.email.errors?.required">
+                                Email is required
+                            </span>
+                            <span class="text-danger"
+                                *ngIf="userFormControls.email.touched && userFormControls.email.errors?.email">
+                                Enter a valid email address
+                            </span>  
+
+              <br/>
+
+              <div class="input-group input-group-lg" > 
+                <label for="password" style="font-weight: bold;">Password</label> 
+              </div>
+              <div class="input-group input-group-lg" >  
+                <input type="password" class="form-control" placeholder="Password"  formControlName="password">  
+              </div> 
+<br/><br/>
+              <button type="submit" style="float: right;" class="btn btn-primary" [disabled]="!UserForm.valid">Sign Up</button>  
+            </form>
+            
+            <div class="text-danger" *ngIf="msg">
+                {{msg}}
+                </div>
+
+                <div class="text-success" *ngIf="success">
+                  {{success}}
+                  </div>
+          </div>  
+        </div>  
+      </div>  
+    </div>  
+  </div> 

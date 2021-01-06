@@ -31,7 +31,10 @@
                 <input type="password" class="form-control" placeholder="Password"  formControlName="password">  
               </div> 
 <br/><br/>
-              <button type="submit" style="float: right;" class="btn btn-primary" [disabled]="!UserForm.valid">Sign Up</button>  
+              <button type="submit" style="float: right;" class="btn btn-primary" [disabled]="!UserForm.valid">Sign In</button> 
+              <br>
+              <br>
+              <a [routerLink]="['/ForgetPassword']">forget password?</a> 
             </form>
             
             <div class="text-danger" *ngIf="msg">

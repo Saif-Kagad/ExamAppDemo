@@ -60,7 +60,9 @@ export class LoginComponent implements OnInit {
   onLogin(studentLogin:Student)
   {
     this.studentService.LoginCheckUsingApi(studentLogin).
-    subscribe(u=>{this.student = u;this.success="Login successful"},
+    subscribe(u=>{this.student = u;this.success="Login successful";
+      //Setting Session value
+      localStorage.setItem('Session','1') },
       err=>{this.msg=err.error.Message;this.student=undefined}
       );
      // alert('Login successful')

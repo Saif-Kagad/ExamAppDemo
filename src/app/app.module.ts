@@ -15,11 +15,14 @@ import * as CryptoJS from 'crypto-js';
 import { ForgetPasswordComponent } from './forget-password/forget-password.component';
 import { ResetComponentComponent } from './reset-component/reset-component.component';
 import { ForgetPassword } from './services/forgetpassword';
+import { AuthguardServiceService } from './authguard-service.service';
+import { AuthenticationGuard } from './authentication.guard';
 
 
 
 var myRoutes:Routes=[
-  {path:"home",component:HomeComponent},
+  {path:'',redirectTo:"login",pathMatch:"full"},
+  {path:"home",component:HomeComponent,canActivate:[AuthenticationGuard]},
   {path:"aboutus",component:AboutusComponent},
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
@@ -42,7 +45,7 @@ var myRoutes:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(myRoutes)
   ],
-  providers: [StudentService,ForgetPassword],
+  providers: [StudentService,ForgetPassword,AuthguardServiceService],
   bootstrap: [AppComponent,RegisterComponent]
 })
 export class AppModule { }

@@ -25,7 +25,7 @@ export class ForgetPasswordComponent implements OnInit {
       this.registerForm=this.formBuilder.group({});
       localStorage.setItem("returnedID","");
       localStorage.setItem("returnedToken","");
-    this.token=CryptoJS.AES.encrypt("Keerthivasan","Hi,Django,Thisisthekeyforencryptingtoken");
+      this.token=CryptoJS.AES.encrypt("Keerthivasan","Hi,Django,Thisisthekeyforencryptingtoken");
       console.log(this.token.toString());
       var dec = CryptoJS.AES.decrypt(this.token.toString(),"Hi,Django,Thisisthekeyforencryptingtoken");
       console.log(dec.toString(CryptoJS.enc.Utf8));

@@ -11,6 +11,8 @@ import { HomeComponent } from './home/home.component';
 import { AboutusComponent } from './aboutus/aboutus.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
+import { AdminDashboardComponent } from './admin/admin-dashboard/admin-dashboard.component';
+import { AdminComponent } from './admin/admin/admin.component';
 
 
 var myRoutes:Routes=[
@@ -24,7 +26,7 @@ var myRoutes:Routes=[
 
 @NgModule({
   declarations: [
-    AppComponent,RegisterComponent, HomeComponent, AboutusComponent,LoginComponent
+    AppComponent,RegisterComponent, HomeComponent, AboutusComponent,LoginComponent, AdminDashboardComponent, AdminComponent
   ],
   imports: [
     BrowserModule,

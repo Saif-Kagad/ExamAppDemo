@@ -37,9 +37,19 @@
             <div class="text-danger" *ngIf="msg">
                 {{msg}}
                 </div>
-
-                <div class="text-success" *ngIf="success">
+<br/>
+<br/>
+                <div class="text-success" *ngIf="success" style="background-color: aquamarine;">
                   {{success}}
+                  <nav class="navbar navbar-dark bg-primary">
+                    <div class="container-fluid">
+                      
+                      <ul class="nav navbar-nav navbar-right" style="height: 100px; padding-top: 20px;font-size: large;">
+                        <button (click)="Login()" class="btn btn-success"> Proceed to Home</button>
+                           
+                      </ul>
+                    </div>
+                  </nav>
                   </div>
           </div>  
         </div>  

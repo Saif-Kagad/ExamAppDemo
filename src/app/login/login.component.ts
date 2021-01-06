@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
 import { Student } from '../models/student.model';
 import { StudentService } from '../services/student.service';
 
@@ -16,7 +17,7 @@ export class LoginComponent implements OnInit {
   success:any;
   UserForm: any; 
   submitted=false;
-  constructor(private studentService:StudentService) {
+  constructor(private studentService:StudentService,private router:Router) {
     this.studentLogin=new Student();
    }
    
@@ -41,7 +42,7 @@ export class LoginComponent implements OnInit {
      this.submitted = true;
     //  if (this.UserForm.valid) {
     //   //alert('User login succesful!!!')
-    //   this.UserForm.reset();
+    this.UserForm.reset();
     // } 
    
  
@@ -49,6 +50,12 @@ export class LoginComponent implements OnInit {
 
 
   }
+
+
+  Login()
+    {
+      this.router.navigate(["home"])
+    }
 
   onLogin(studentLogin:Student)
   {

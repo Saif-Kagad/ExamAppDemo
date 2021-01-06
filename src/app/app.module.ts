@@ -12,19 +12,26 @@ import { AboutusComponent } from './aboutus/aboutus.component';
 import { RouterModule, Routes } from '@angular/router';
 import { LoginComponent } from './login/login.component';
 
+import { ForgetPasswordComponent } from './forget-password/forget-password.component';
+import { ResetComponentComponent } from './reset-component/reset-component.component';
+import { ForgetPassword } from './services/forgetpassword.service';
+
 
 var myRoutes:Routes=[
   {path:"home",component:HomeComponent},
   {path:"aboutus",component:AboutusComponent},
   {path:"register",component:RegisterComponent},
   {path:"login",component:LoginComponent},
+  // Paths - Forget Password and Reset Password
+  {path:"ForgetPassword",component:ForgetPasswordComponent},
+  {path:"ResetPassword",component:ResetComponentComponent}
 
 ]
 
 
 @NgModule({
   declarations: [
-    AppComponent,RegisterComponent, HomeComponent, AboutusComponent,LoginComponent
+    AppComponent,RegisterComponent, HomeComponent, AboutusComponent,LoginComponent, ForgetPasswordComponent, ResetComponentComponent
   ],
   imports: [
     BrowserModule,
@@ -34,7 +41,7 @@ var myRoutes:Routes=[
     ReactiveFormsModule,
     RouterModule.forRoot(myRoutes)
   ],
-  providers: [StudentService],
+  providers: [StudentService,ForgetPassword],
   bootstrap: [AppComponent,RegisterComponent]
 })
 export class AppModule { }

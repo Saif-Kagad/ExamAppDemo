@@ -1,3 +1,21 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<nav class="navbar navbar-dark bg-primary">
+  <div class="container-fluid">
+    <div class="navbar-header py-5" style="color:white; height: 100px; padding-top: 10px;font-size: larger">
+      <h2><span class="glyphicon glyphicon-list-alt"></span>&nbsp;Online Exam App</h2>
+    </div>
+    <ul class="nav navbar-nav navbar-right" style="height: 100px; padding-top: 20px;font-size: large;">
+      <li><a routerLink="/aboutus" style="color: white;"><i class="fa fa-users" aria-hidden="true"></i>
+      About us</a></li>
+      
+      <!-- //Logout Button Code -->
+      <li><a routerLink="/login" (click)="logout()" style="color: white;"><i class="fa fa-pencil" aria-hidden="true"></i>Logout</a></li>
+    
+    </ul>
+  </div>
+</nav>
+
 <div >
     <img src="/assets/logo.png" class="center" style="width: 400px;height: 300px;">
 </div>

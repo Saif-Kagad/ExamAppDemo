@@ -18,8 +18,6 @@ import { ForgetPassword } from './services/forgetpassword';
 import { AuthguardServiceService } from './authguard-service.service';
 import { AuthenticationGuard } from './authentication.guard';
 
-
-
 var myRoutes:Routes=[
   {path:'',redirectTo:"login",pathMatch:"full"},
   {path:"home",component:HomeComponent,canActivate:[AuthenticationGuard]},
@@ -35,7 +33,13 @@ var myRoutes:Routes=[
 
 @NgModule({
   declarations: [
-    AppComponent,RegisterComponent, HomeComponent, AboutusComponent,LoginComponent, ForgetPasswordComponent, ResetComponentComponent
+    AppComponent,
+    RegisterComponent, 
+    HomeComponent, 
+    AboutusComponent,
+    LoginComponent, 
+    ForgetPasswordComponent, 
+    ResetComponentComponent
   ],
   imports: [
     BrowserModule,

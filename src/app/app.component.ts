@@ -7,4 +7,10 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'ExamProjectApp';
+  
+  // logged:boolean=!!localStorage.getItem('button');
+  
+  constructor(){
+    // localStorage.setItem('button','true');
+  }
 }

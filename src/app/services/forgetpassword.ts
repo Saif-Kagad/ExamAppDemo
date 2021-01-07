@@ -7,9 +7,9 @@ export class ForgetPassword{
     constructor(private hc:HttpClient){
 
     }
-    public sendMail(id:number){
+    public sendMail(id:string){
         //Change the link
-        return this.hc.get("http://localhost:52104/api/ForgetPassword?id="+id);
+        return this.hc.get("http://localhost:52104/api/ForgetPassword?email="+id);
     }
 
     public savePass(d:ResetPassword){
